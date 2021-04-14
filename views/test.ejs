@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Stream video using webcam -->
+    <div class="video-wrap" >
+        <video id="video" playsinline autoplay></video>
+    </div>
+    <!-- trigger canvas web api -->
+    <div class="controller">
+        <button id="snap">Capture</button>
+    </div>
+    <!-- webcam video snapshot -->
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <script defer async src="js/face-api.min.js"></script>
+    <script defer async src="js/script.js"></script>
+    <H1>h</H1>
+
+    <script>
+        'use strict';
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const snap = document.getElementById('snap');
+        const errMsg = document.getElementById('spanErrorMsg');
+
+        const constraints = {
+            audio: true,
+            video:{
+                width: 640,
+                height: 480
+            }
+        };
+        // Access webcam
+        async function init(){
+            try{
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                handleSuccess(stream);
+            }
+            catch(e){
+                errMsg.innerHTML = `navigator.getUserMedia.error:${e.toString()}`;
+                        }
+        }
+        // handleSuccess
+        function handleSuccess(stream){
+            window.stream = stream
+            video.srcObject = stream
+
+        }
+        // Load init funtion
+        init();
+        // Draw Image
+        var context = canvas.getContext('2d');
+        snap.addEventListener("click",function(){
+            context.drawImage(video, 0,0,680,480);
+        });
+
+    </script>
+</body>
+</html>

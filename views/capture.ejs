@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Face Recogination Attendance App</h1>
+    <video id="video" width="720" height="550" playsinline autoplay></video>
+    <button type="button" id="snap" class="btn btn-outline-success">Detect Face</button>
+    <button type="button" id="markAttendance" class="btn btn-outline-success">Mark Attendance</button>
+    <button type="button" id="close" class="btn btn-outline-success">Close</button>
+    <script defer src="./js/face-api.min.js"></script>
+    <script defer src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/recordAttendance.css">
+</head>
+<body>
+    <div class="container block">
+        <h1 >Face Recogination Attendance App</h1>
+        <video id="video" width="720" height="550" playsinline autoplay></video>
+        <div class="row">
+            <div class="col-sm-4">
+                <button type="button" id="snap" class="btn btn-success btn-lg btn-block">Detect Face</button>
+                
+            </div>
+            <div class="col-sm-4">
+                <button type="button" id="markAttendance" class="btn btn-primary btn-lg btn-block">Mark Attendance</button>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" id="close" class="btn btn-danger btn-lg btn-block">Close</button>
+                
+            </div>
+        </div>
+        <script defer src="./js/face-api.min.js"></script>
+        <script defer src="./js/script.js"></script>
+    </div>
+    
+</body>
+</html>
